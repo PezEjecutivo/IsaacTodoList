@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('type');
             $table->integer('health');
-            $table->integer('damage');
+            $table->float('damage');
             $table->timestamps();
         });
     }
