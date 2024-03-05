@@ -16,9 +16,9 @@ return new class extends Migration
             $table->id();
             //$table->morphs('tokenable');
             $table->string('name')->unique();
-            $table->string('description'); 
-            $table->string('video'); 
-            $table->string('enemy_id'); 
+            $table->string('description');
+            $table->string('video');
+            $table->unsignedBigInteger('enemy_id');
             $table->foreign('enemy_id')->references('id')->on('enemys');
             //$table->timestamps();
         });

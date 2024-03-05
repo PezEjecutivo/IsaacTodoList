@@ -16,11 +16,11 @@ return new class extends Migration
             $table->id();
             //$table->morphs('tokenable');
             $table->string('name')->unique();
-            $table->string('description'); 
-            $table->string('playable_character'); 
-            $table->string('final_enemy');
-            $table->foreign('playable_character')->refrences('id')->on('characters'); 
-            $table->foreign('final_enemy')->refrences('id')->on('enemys');  
+            $table->string('description');
+            $table->unsignedBigInteger('playable_character');
+            $table->unsignedBigInteger('final_enemy');
+            $table->foreign('playable_character')->references('id')->on('characters');
+            $table->foreign('final_enemy')->references('id')->on('enemys');
             //$table->timestamps();
         });
     }

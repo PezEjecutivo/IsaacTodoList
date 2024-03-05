@@ -13,12 +13,11 @@ return new class extends Migration
     {
         //
         Schema::create('user_items', function (Blueprint $table) {
-            $table->id();
             //$table->morphs('tokenable');
-            $table->string('user_id');
-            $table->string('item_id'); 
-            $table->foreign('user_id')->refrences('id')->on('users');  
-            $table->foreign('item_id')->refrences('id')->on('unlockeable_items'); 
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('item_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('item_id')->references('id')->on('unlockable_items');
             $table->primary(['user_id', 'item_id']);
             //$table->timestamps();
         });

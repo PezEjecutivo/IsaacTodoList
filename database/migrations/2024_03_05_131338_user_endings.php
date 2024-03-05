@@ -12,13 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('user_characters', function (Blueprint $table) {
-            $table->id();
+        Schema::create('user_endings', function (Blueprint $table) {
             //$table->morphs('tokenable');
-            $table->string('user_id');
-            $table->string('ending_id'); 
-            $table->foreign('user_id')->refrences('id')->on('users');  
-            $table->foreign('ending_id')->refrences('id')->on('endings'); 
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('ending_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('ending_id')->references('id')->on('endings');
             $table->primary(['user_id', 'ending_id']);
             //$table->timestamps();
         });
