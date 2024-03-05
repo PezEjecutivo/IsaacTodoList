@@ -16,10 +16,10 @@ return new class extends Migration
             $table->id();
             //$table->morphs('tokenable');
             $table->string('name')->unique();
-            $table->string('type'); 
-            $table->integer('health'); 
-            $table->integer('damage'); 
-            //$table->timestamps();
+            $table->string('type');
+            $table->integer('health');
+            $table->integer('damage');
+            $table->timestamps();
         });
     }
 

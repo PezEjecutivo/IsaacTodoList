@@ -16,10 +16,10 @@ return new class extends Migration
             $table->id();
             //$table->morphs('tokenable');
             $table->string('name')->unique();
-            $table->string('type'); 
-            $table->string('efect'); 
-            $table->string('associated_character')->nullable(); 
-            //$table->timestamps();
+            $table->string('type');
+            $table->string('effect');
+            $table->string('associated_character')->nullable();
+            $table->timestamps();
         });
     }
 

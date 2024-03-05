@@ -16,10 +16,10 @@ return new class extends Migration
             $table->id();
             //$table->morphs('tokenable');
             $table->string('name')->unique();
-            $table->string('description'); 
-            $table->string('seed'); 
-            $table->string('reference'); 
-            //$table->timestamps();
+            $table->longText('description');
+            $table->string('seed');
+            $table->longText('reference');
+            $table->timestamps();
         });
     }
 

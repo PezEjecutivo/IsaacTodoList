@@ -17,12 +17,12 @@ return new class extends Migration
             //$table->morphs('tokenable');
             $table->string('name')->unique();
             $table->string('type');
-            $table->string('efect');
+            $table->string('effect');
             $table->unsignedBigInteger('enemy_method_id');
             $table->unsignedBigInteger('challenge_method_id');
             $table->foreign('enemy_method_id')->references('id')->on('enemys');
             $table->foreign('challenge_method_id')->references('id')->on('challenges');
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

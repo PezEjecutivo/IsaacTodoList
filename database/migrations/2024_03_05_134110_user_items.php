@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('item_id')->references('id')->on('unlockable_items');
             $table->primary(['user_id', 'item_id']);
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 
