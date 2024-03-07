@@ -17,8 +17,8 @@ class User_initial_itemsFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => fake()->numberBetween(1, 10),
-            'initial_item_id' => fake()->numberBetween(1, 10)
+            'user_id' => \App\Models\Users::factory(),
+            'initial_item_id' => \App\Models\Initial_items::factory()
         ];
     }
 }

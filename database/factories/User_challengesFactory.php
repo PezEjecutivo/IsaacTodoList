@@ -17,8 +17,8 @@ class User_challengesFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => fake()->numberBetween(1, 10),
-            'challenge_id' => fake()->numberBetween(1, 10)
+            'user_id' => \App\Models\Users::factory(),
+            'challenge_id' => \App\Models\Challenges::factory()
         ];
     }
 }

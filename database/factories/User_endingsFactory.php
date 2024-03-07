@@ -17,8 +17,8 @@ class User_endingsFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => fake()->numberBetween(1, 10),
-            'ending_id' => fake()->numberBetween(1, 10)
+            'user_id' => \App\Models\Users::factory(),
+            'ending_id' => \App\Models\Endings::factory()
         ];
     }
 }

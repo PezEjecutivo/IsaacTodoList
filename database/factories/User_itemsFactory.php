@@ -17,8 +17,8 @@ class User_itemsFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => fake()->numberBetween(1, 10),
-            'item_id' => fake()->numberBetween(1, 10)
+            'user_id' => \App\Models\Users::factory(),
+            'item_id' => \App\Models\Unlockable_items::factory()
         ];
     }
 }
