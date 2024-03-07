@@ -8,68 +8,58 @@
         <div class="card">
             <div class="card-header">
                 <div class="float-start">
-                    Añadir Alumno
+                    Añadir Enemigo
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('alumnos.index') }}" class="btn btn-primary btn-sm">&larr; Atras</a>
+                    <a href="{{ route('enemigos.index') }}" class="btn btn-primary btn-sm">&larr; Atras</a>
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('alumnos.store') }}" method="post">
+                <form action="{{ route('enemigos.store') }}" method="post">
                     @csrf
 
                     <div class="mb-3 row">
-                        <label for="nombre" class="col-md-4 col-form-label text-md-end text-start">Nombre</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-end text-start">Nombre:</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control @error('nombre') is-invalid @enderror" id="nombre" name="nombre" value="{{ old('nombre') }}">
-                            @if ($errors->has('nombre'))
-                            <span class="text-danger">{{ $errors->first('nombre') }}</span>
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}">
+                            @if ($errors->has('name'))
+                            <span class="text-danger">{{ $errors->first('name') }}</span>
                             @endif
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="apellidos" class="col-md-4 col-form-label text-md-end text-start">Apellidos</label>
+                        <label for="type" class="col-md-4 col-form-label text-md-end text-start">Tipo:</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control @error('apellidos') is-invalid @enderror" id="apellidos" name="apellidos" value="{{ old('apellidos') }}">
-                            @if ($errors->has('apellidos'))
-                            <span class="text-danger">{{ $errors->first('apellidos') }}</span>
+                            <input type="text" class="form-control @error('type') is-invalid @enderror" id="type" name="type" value="{{ old('type') }}">
+                            @if ($errors->has('type'))
+                            <span class="text-danger">{{ $errors->first('type') }}</span>
                             @endif
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="edad" class="col-md-4 col-form-label text-md-end text-start">Edad</label>
+                        <label for="health" class="col-md-4 col-form-label text-md-end text-start">Vida:</label>
                         <div class="col-md-6">
-                            <input type="number" class="form-control @error('edad') is-invalid @enderror" id="edad" name="edad" value="{{ old('edad') }}">
-                            @if ($errors->has('edad'))
-                            <span class="text-danger">{{ $errors->first('edad') }}</span>
+                            <input type="number" class="form-control @error('health') is-invalid @enderror" id="health" name="health" value="{{ old('health') }}">
+                            @if ($errors->has('health'))
+                            <span class="text-danger">{{ $errors->first('health') }}</span>
                             @endif
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="nota" class="col-md-4 col-form-label text-md-end text-start">Nota</label>
+                        <label for="damage" class="col-md-4 col-form-label text-md-end text-start">Daño:</label>
                         <div class="col-md-6">
-                            <input type="number" class="form-control @error('nota') is-invalid @enderror" id="nota" name="nota" value="{{ old('nota') }}">
-                            @if ($errors->has('nota'))
-                            <span class="text-danger">{{ $errors->first('nota') }}</span>
+                            <input type="number" class="form-control @error('damage') is-invalid @enderror" id="damage" name="damage" value="{{ old('damage') }}">
+                            @if ($errors->has('damage'))
+                            <span class="text-danger">{{ $errors->first('damage') }}</span>
                             @endif
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="descripcion" class="col-md-4 col-form-label text-md-end text-start">Descripcion</label>
-                        <div class="col-md-6">
-                            <textarea class="form-control @error('descripcion') is-invalid @enderror" id="descripcion" name="descripcion">{{ old('descripcion') }}</textarea>
-                            @if ($errors->has('descripcion'))
-                            <span class="text-danger">{{ $errors->first('descripcion') }}</span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="mb-3 row">
-                        <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Añadir Alumno">
+                        <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Añadir Enemigo">
                     </div>
 
                 </form>

@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('effect');
             $table->unsignedBigInteger('enemy_method_id');
             $table->unsignedBigInteger('challenge_method_id');
-            $table->foreign('enemy_method_id')->references('id')->on('enemys');
-            $table->foreign('challenge_method_id')->references('id')->on('challenges');
+            $table->foreign('enemy_method_id')->references('id')->on('enemys')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('challenge_method_id')->references('id')->on('challenges')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

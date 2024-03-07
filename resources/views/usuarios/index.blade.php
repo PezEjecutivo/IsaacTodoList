@@ -1,4 +1,4 @@
-@extends('enemigos.layouts')
+@extends('usuarios.layouts')
 
 @section('content')
 
@@ -12,35 +12,31 @@
         @endif
 
         <div class="card">
-            <div class="card-header">Enemigos</div>
+            <div class="card-header">usuarios</div>
             <div class="card-body">
-                <a href="{{ route('enemigos.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo Enemigo</a>
+                <a href="{{ route('usuarios.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo usuario</a>
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Tipo</th>
-                            <th scope="col">Vida</th>
-                            <th scope="col">Daño</th>
+                            <th scope="col">Email</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($enemigos as $enemigo)
+                        @foreach ($usuarios as $usuario)
                         <tr>
-                            <th scope="row">{{ $enemigo->id }}</th>
-                            <td>{{ $enemigo->name }}</td>
-                            <td>{{ $enemigo->type }}</td>
-                            <td>{{ $enemigo->health }}</td>
-                            <td>{{ $enemigo->damage }}</td>
+                            <th scope="row">{{ $usuario->id }}</th>
+                            <td>{{ $usuario->name }}</td>
+                            <td>{{ $usuario->email }}</td>
                             <td>
-                                <form action="{{ route('enemigos.destroy', $enemigo->id) }}" method="post">
+                                <form action="{{ route('usuarios.destroy', $usuario->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
 
-                                    <a href="{{ route('enemigos.show', $enemigo->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Ver</a>
+                                    <a href="{{ route('usuarios.show', $usuario->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Ver</a>
 
-                                    <a href="{{ route('enemigos.edit', $enemigo->id) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Editar</a>
+                                    <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Editar</a>
 
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Quieres Borrar este producto?');"><i class="bi bi-trash"></i> Borrar</button>
                                 </form>

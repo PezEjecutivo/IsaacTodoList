@@ -16,8 +16,8 @@ return new class extends Migration
             //$table->morphs('tokenable');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('challenge_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('challenge_id')->references('id')->on('challenges');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('challenge_id')->references('id')->on('challenges')->cascadeOnDelete()->cascadeOnUpdate();
             $table->primary(['user_id', 'challenge_id']);
             $table->timestamps();
         });

@@ -15,7 +15,7 @@
 <body>
 
     <div class="container">
-        <h3 class=" mt-3">CRUD Basico Enemigos TBOI Repentance</h3>
+        <h3 class=" mt-3">CRUD Basico Usuarios de IsaacTodoList</h3>
         @yield('content')
     </div>
 

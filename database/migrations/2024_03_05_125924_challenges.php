@@ -19,8 +19,8 @@ return new class extends Migration
             $table->longText('description');
             $table->unsignedBigInteger('playable_character');
             $table->unsignedBigInteger('final_enemy');
-            $table->foreign('playable_character')->references('id')->on('characters');
-            $table->foreign('final_enemy')->references('id')->on('enemys');
+            $table->foreign('playable_character')->references('id')->on('characters')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('final_enemy')->references('id')->on('enemys')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

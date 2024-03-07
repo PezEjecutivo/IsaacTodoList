@@ -19,7 +19,7 @@ return new class extends Migration
             $table->longText('description');
             $table->string('video');
             $table->unsignedBigInteger('enemy_id');
-            $table->foreign('enemy_id')->references('id')->on('enemys');
+            $table->foreign('enemy_id')->references('id')->on('enemys')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

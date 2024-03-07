@@ -18,9 +18,9 @@ class EnemysFactory extends Factory
     {
         return [
             'name' => fake()->unique()->name(),
-            'type' => fake()->text(),
+            'type' => fake()->randomElement(["Normal", "Mini-Boss", "Boss"]),
             'health' => fake()->numberBetween(1, 10000),
-            'damage' => fake()->numberBetween(0.5, 1),
+            'damage' => fake()->numberBetween(1, 2),
         ];
     }
 }
