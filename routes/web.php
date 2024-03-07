@@ -17,13 +17,6 @@ use App\Http\Controllers\UsuariosController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-//Route::get("/usuarios", [Controller::class, "getUsuarios"]);
-
-//Route::get("/enemigos", [Index::class, "index"]);
 
 Route::resource("enemigos", EnemigosController::class);
 Route::resource("usuarios", UsuariosController::class);
