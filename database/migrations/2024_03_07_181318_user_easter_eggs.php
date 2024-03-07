@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_items', function (Blueprint $table) {
+        Schema::create('user_easter_eggs', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('easter_egg_id');
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreign('item_id')->references('id')->on('unlockable_items')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->primary(['user_id', 'item_id']);
+            $table->foreign('easter_egg_id')->references('id')->on('easter_eggs')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->primary(['user_id', 'easter_egg_id']);
             $table->timestamps();
         });
     }

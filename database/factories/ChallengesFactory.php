@@ -19,7 +19,7 @@ class ChallengesFactory extends Factory
         return [
             'name' => fake()->unique()->name(),
             'description' => fake()->text(),
-            'playable_character' => fake()->numberBetween(1, 10),
+            'playable_character' => fake()->numberBetween(1, 100),
             'final_enemy' => fake()->numberBetween(1, 10),
         ];
     }

@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_items', function (Blueprint $table) {
+        Schema::create('user_initial_items', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('initial_item_id');
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreign('item_id')->references('id')->on('unlockable_items')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->primary(['user_id', 'item_id']);
+            $table->foreign('initial_item_id')->references('id')->on('initial_items')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->primary(['user_id', 'initial_item_id']);
             $table->timestamps();
         });
     }
