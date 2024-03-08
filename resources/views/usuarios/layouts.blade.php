@@ -15,8 +15,21 @@
 <body>
 
     <div class="container">
-        <h3 class=" mt-3">CRUD Basico Usuarios de IsaacTodoList</h3>
-        @yield('content')
+        <div class="container">
+            <div style="display: flex; flex-direction: row">
+                <h3 class=" mt-3">CRUD Basico Enemigos TBOI Repentance</h3>
+                @auth
+                <form style="margin: 15px;" action="/logout" method="POST">
+                    @CSRF
+
+                    <button class="btn btn-danger" type="submit">
+                        Cerrar Sesion
+                    </button>
+                </form>
+                @endauth
+            </div>
+            @yield('content')
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

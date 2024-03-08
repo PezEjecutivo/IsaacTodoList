@@ -4,7 +4,6 @@ use App\Http\Controllers\EnemigosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Index;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsuariosController;
 
 /*
@@ -18,7 +17,12 @@ use App\Http\Controllers\UsuariosController;
 |
 */
 
+//CRUD
+Route::resource("enemigos", EnemigosController::class)->middleware('auth');
+Route::resource("usuarios", UsuariosController::class)->middleware('auth');
 
-Route::resource("enemigos", EnemigosController::class);
-Route::resource("usuarios", UsuariosController::class);
-Route::get('/', [LoginController::class, 'index']);
+//Registro
+Route::get("/login", [UsuariosController::class, "formularioLogin"])->name('login');
+Route::post('/login', [UsuariosController::class, 'iniciarSesion'])->name('login.iniciar');
+Route::post("/logout", [UsuariosController::class, "logout"]);
+//Route::post('/login', \App\Models\UsuariosController "iniciarSesion");

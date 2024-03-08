@@ -16,7 +16,18 @@
 <body>
 
     <div class="container">
-        <h3 class=" mt-3">CRUD Basico Enemigos TBOI Repentance</h3>
+        <div style="display: flex; flex-direction: row">
+            <h3 class=" mt-3">CRUD Basico Enemigos TBOI Repentance</h3>
+            @auth
+            <form style="margin: 15px;" action="/logout" method="POST">
+                @CSRF
+
+                <button class="btn btn-danger" type="submit">
+                    Cerrar Sesion
+                </button>
+            </form>
+            @endauth
+        </div>
         @yield('content')
     </div>
 

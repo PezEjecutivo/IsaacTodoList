@@ -92,4 +92,36 @@ class UsuariosController extends Controller
         return redirect()->route('usuarios.index')
             ->with('success', 'usuario borrado');
     }
+
+    public function formularioLogin()
+    {
+        return view("login.index");
+    }
+
+    public function iniciarSesion(Request $request)
+    {
+        $sesion = $request->validate([
+            'email' => ['required'],
+            'password' => ['required']
+        ]);
+
+        if (auth()->attempt($sesion)) {
+            $request->session()->regenerate();
+            return redirect('/enemigos');
+        } else {
+        }
+        return back();
+    }
+    public function login(Request $request)
+    {
+        return view('login.index');
+    }
+    public function logout(Request $request)
+    {
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return back();
+    }
 }
