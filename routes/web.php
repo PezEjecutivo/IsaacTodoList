@@ -24,5 +24,6 @@ Route::resource("usuarios", UsuariosController::class)->middleware('auth');
 //Registro
 Route::get("/login", [UsuariosController::class, "formularioLogin"])->name('login');
 Route::post('/login', [UsuariosController::class, 'iniciarSesion'])->name('login.iniciar');
+Route::get('/registro', [UsuariosController::class, 'create'])->name('registro');
+Route::post('/registro', [UsuariosController::class, 'store'])->name('registro.store');
 Route::post("/logout", [UsuariosController::class, "logout"]);
-//Route::post('/login', \App\Models\UsuariosController "iniciarSesion");

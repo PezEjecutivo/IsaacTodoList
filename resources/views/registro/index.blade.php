@@ -18,7 +18,7 @@
         <button style="margin: 10px;" type="submit" class="btn btn-primary">Iniciar Sesion</button>
     </form>
 
-    <form style="margin: 10px" action="{{ route('registro') }}">
+    <form style="margin: 10px" action="{{ route('login.create') }}">
         <label for="">¿No tienes cuenta? Registrate!!</label>
         <br>
         <button class="btn btn-danger">Registrarse</button>
