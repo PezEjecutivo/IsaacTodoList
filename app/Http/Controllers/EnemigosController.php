@@ -60,11 +60,11 @@ class EnemigosController extends Controller
 
         $finales = Endings::all();
 
-        $final = "";
+        $final = [];
 
         for ($i = 0; $i < count($finales); $i++) {
             if ($finales[$i]["enemy_id"] == $id) {
-                $final = $finales[$i];
+                $final[] = $finales[$i];
             }
         }
 

@@ -26,8 +26,7 @@
                     <tbody>
                         @foreach ($usuarios as $usuario)
                         <tr>
-                            <th scope="row">{{ $usuario->id }}</th>
-                            <td>{{ $usuario->name }}</td>
+                            <td><a href="{{ route('usuarios.show', $usuario->id)}}">{{ $usuario->name }}</a></td>
                             <td>{{ $usuario->email }}</td>
                             <td>
                                 <form action="{{ route('usuarios.destroy', $usuario->id) }}" method="post">

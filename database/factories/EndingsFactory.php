@@ -20,7 +20,7 @@ class EndingsFactory extends Factory
             'name' => fake()->unique()->name(),
             'description' => fake()->text(),
             'video' => fake()->text(),
-            'enemy_id' => fake()->numberBetween(1, 10)
+            'enemy_id' => fake()->numberBetween(1, 100)
         ];
     }
 }

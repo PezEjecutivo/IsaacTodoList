@@ -4,6 +4,7 @@ use App\Http\Controllers\EnemigosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Index;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsuariosController;
 
 /*
@@ -20,3 +21,4 @@ use App\Http\Controllers\UsuariosController;
 
 Route::resource("enemigos", EnemigosController::class);
 Route::resource("usuarios", UsuariosController::class);
+Route::get('/', [LoginController::class, 'index']);

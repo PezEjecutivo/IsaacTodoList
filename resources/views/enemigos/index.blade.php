@@ -18,7 +18,6 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Tipo</th>
                             <th scope="col">Vida</th>
@@ -28,8 +27,7 @@
                     <tbody>
                         @foreach ($enemigos as $enemigo)
                         <tr>
-                            <th scope="row">{{ $enemigo->id }}</th>
-                            <td>{{ $enemigo->name }}</td>
+                            <td><a href="{{ route('enemigos.show', $enemigo->id)}}">{{ $enemigo->name }}</a></td>
                             <td>{{ $enemigo->type }}</td>
                             <td>{{ $enemigo->health }}</td>
                             <td>{{ $enemigo->damage }}</td>

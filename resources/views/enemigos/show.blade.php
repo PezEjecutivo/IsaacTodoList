@@ -44,36 +44,36 @@
                     </div>
                 </div>
 
-                <?php if ($final != "") : ?>
+                <?php if ($final != []) : ?>
+                    <?php $contador = 0; ?>
                     <h3 style="text-align: center;">Datos del final asociado al enemigo</h3>
-
-                    <div class="row">
-                        <label for="damage" class="col-md-4 col-form-label text-md-end text-start"><strong>ID Final:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $final->id }}
-                        </div>
-                    </div>
-
+                    @foreach($final as $finales)
+                    <?php
+                    $contador++;
+                    echo "<h4 style='text-align: center;'> Datos del " . $contador . "º final asociado</h4>";
+                    ?>
                     <div class="row">
                         <label for="damage" class="col-md-4 col-form-label text-md-end text-start"><strong>Nombre:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
-                            {{ $final->name }}
+                            {{ $finales->name }}
                         </div>
                     </div>
 
                     <div class="row">
                         <label for="damage" class="col-md-4 col-form-label text-md-end text-start"><strong>Descripcion:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
-                            {{ $final->description }}
+                            {{ $finales->description }}
                         </div>
                     </div>
 
                     <div class="row">
                         <label for="damage" class="col-md-4 col-form-label text-md-end text-start"><strong>Video:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
-                            {{ $final->video }}
+                            {{ $finales->video }}
                         </div>
                     </div>
+
+                    @endforeach
                 <?php else : ?>
 
                     <h3 style="text-align: center;">No hay endings relacionados con este enemigo</h3>
